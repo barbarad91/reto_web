@@ -19,7 +19,7 @@ function App() {
   )
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   container: {
     paddingTop: '7vh',
     minHeight: '94vh',

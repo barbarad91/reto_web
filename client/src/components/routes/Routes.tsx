@@ -1,9 +1,9 @@
 import { Switch, Route, Redirect } from 'react-router-dom'
-import BeersList from '../pages/Beers/BeersList'
+import PhonesList from '../pages/Phones/PhonesList'
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/" exact render={() => <BeersList />}></Route>
+      <Route path="/" exact render={() => <PhonesList />}></Route>
     </Switch>
   )
 }
