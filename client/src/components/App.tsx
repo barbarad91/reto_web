@@ -1,9 +1,8 @@
 import React from 'react'
 import theme from './theme'
 
-import { CssBaseline, ThemeProvider, makeStyles, Theme } from '@material-ui/core'
+import { CssBaseline, ThemeProvider, makeStyles, Theme, Grid } from '@material-ui/core'
 
-import Button from './shared/Button'
 import NavBar from './layout/NavBar/NavBar'
 import Routes from './routes/Routes'
 
@@ -13,13 +12,18 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <NavBar />
-      <Routes />
+      <Grid className={classes.container}>
+        <Routes />
+      </Grid>
     </ThemeProvider>
   )
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {
+  container: {
+    paddingTop: '7vh',
+    minHeight: '94vh',
+    display: 'flex',
     justifyContent: 'center',
   },
 }))
