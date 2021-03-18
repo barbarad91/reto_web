@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const phoneSchema = new Schema(
@@ -30,7 +30,7 @@ const phoneSchema = new Schema(
       type: Number,
       required: true,
     },
-    imageFileName: {
+    imageUrl: {
       type: String,
     },
     screen: {
@@ -50,5 +50,5 @@ const phoneSchema = new Schema(
   }
 )
 
-const Phone = mongoose.model("Phone", phoneSchema)
+const Phone = mongoose.model('Phone', phoneSchema)
 module.exports = Phone
