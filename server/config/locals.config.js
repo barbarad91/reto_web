@@ -1,3 +1,3 @@
-module.exports = app => {
-    app.locals.siteTitle = 'Surf School'
+module.exports = (app) => {
+  app.locals.siteTitle = "The Phone Cave"
 }
