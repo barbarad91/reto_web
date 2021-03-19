@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router'
 import PhoneService from '../../../services/phones/phones.service'
 import { PhoneDetail } from '../../../services/phones/phones.types'
+import LoadingScreen from '../../shared/LoadingScreen'
 
 const PhoneDetails = () => {
   const { id } = useParams<PhoneDetailsParams>()
@@ -22,7 +23,7 @@ const PhoneDetails = () => {
     fetchPhone()
   }, [fetchPhone])
 
-  return <div>{phone ? `holita ${phone.name}` : 'Loading...'}</div>
+  return <>{phone ? phone.name : <LoadingScreen />}</>
 }
 
 type PhoneDetailsParams = {
