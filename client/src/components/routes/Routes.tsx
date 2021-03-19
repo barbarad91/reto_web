@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import PhonesList from '../pages/Phones/PhonesList'
 const Routes = () => {
   return (

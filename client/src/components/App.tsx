@@ -1,7 +1,7 @@
 import React from 'react'
 import theme from './theme'
 
-import { CssBaseline, ThemeProvider, makeStyles, Theme, Grid } from '@material-ui/core'
+import { CssBaseline, ThemeProvider, makeStyles, Grid } from '@material-ui/core'
 
 import NavBar from './layout/NavBar/NavBar'
 import Routes from './routes/Routes'

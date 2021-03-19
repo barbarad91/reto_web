@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import PhoneService from '../../../services/phones.service'
 import PhoneListCard from './PhoneListCard'
@@ -6,18 +6,18 @@ import PhoneListCard from './PhoneListCard'
 const PhonesList = () => {
   const [phones, setPhones] = useState([])
 
-  const phoneService = new PhoneService()
+  const phoneService = useMemo(() => new PhoneService(), [])
 
-  const fetchPhones = () => {
+  const fetchPhones = useCallback(() => {
     phoneService
       .getPhones()
       .then((response) => setPhones(response.data))
       .catch((err) => console.error(err))
-  }
+  }, [phoneService])
 
   useEffect(() => {
     fetchPhones()
-  }, [])
+  }, [fetchPhones])
 
   return (
     <main>
