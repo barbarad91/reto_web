@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import PhoneService from '../../../services/phones/phones.service'
 import { Phone } from '../../../services/phones/phones.types'
+import LoadingScreen from '../../shared/LoadingScreen'
 import PhoneListCard from './PhoneListCard'
 
 const PhonesList = () => {
@@ -27,14 +28,16 @@ const PhonesList = () => {
 
   return (
     <Grid container className={classes.container}>
-      {phones.length
-        ? phones.map((phone) => (
-            <Grid item xs={12} md={6} lg={3} key={phone.phone_id}>
-              <PhoneListCard phone={phone} />
-              <Divider />
-            </Grid>
-          ))
-        : 'Loading...'}
+      {phones.length ? (
+        phones.map((phone) => (
+          <Grid item xs={12} md={6} lg={3} key={phone.phone_id}>
+            <PhoneListCard phone={phone} />
+            <Divider />
+          </Grid>
+        ))
+      ) : (
+        <LoadingScreen />
+      )}
     </Grid>
   )
 }
