@@ -30,7 +30,7 @@ const PhonesList = () => {
     <Grid container className={classes.container}>
       {phones.length ? (
         phones.map((phone) => (
-          <Grid item xs={12} md={6} lg={3} key={phone.phone_id}>
+          <Grid item xs={12} sm={6} lg={3} key={phone.phone_id}>
             <PhoneListCard phone={phone} />
             <Divider />
           </Grid>

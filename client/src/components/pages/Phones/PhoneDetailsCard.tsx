@@ -30,7 +30,7 @@ const PhoneDetailsCard = ({ className, phone }: PhoneDetailsCardProps) => {
           Specs
         </Typography>
         <Grid container className={classes.gridContainer}>
-          <Grid item lg={6} className={classes.gridItem}>
+          <Grid item xs={3} lg={6} className={classes.gridItem}>
             <Icon path={mdiFactory} className={classes.icon} />
             <Typography variant="body2" component="h4">
               <strong>Manufacturer</strong>
@@ -39,7 +39,7 @@ const PhoneDetailsCard = ({ className, phone }: PhoneDetailsCardProps) => {
               {manufacturer}
             </Typography>
           </Grid>
-          <Grid item lg={6} className={classes.gridItem}>
+          <Grid item xs={3} lg={6} className={classes.gridItem}>
             <Icon path={mdiCellphoneScreenshot} className={classes.icon} />
             <Typography variant="body2" component="h4">
               <strong>Screen</strong>
@@ -48,7 +48,7 @@ const PhoneDetailsCard = ({ className, phone }: PhoneDetailsCardProps) => {
               {screen}
             </Typography>
           </Grid>
-          <Grid item lg={6} className={classes.gridItem}>
+          <Grid item xs={3} lg={6} className={classes.gridItem}>
             <Icon path={mdiMemory} className={classes.icon} />
             <Typography variant="body2" component="h4">
               <strong>Processor</strong>
@@ -57,7 +57,7 @@ const PhoneDetailsCard = ({ className, phone }: PhoneDetailsCardProps) => {
               {processor}
             </Typography>
           </Grid>
-          <Grid item lg={6} className={classes.gridItem}>
+          <Grid item xs={3} lg={6} className={classes.gridItem}>
             <Icon path={mdiChip} className={classes.icon} />
             <Typography variant="body2" component="h4">
               <strong>RAM</strong>
