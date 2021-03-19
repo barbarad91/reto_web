@@ -1,6 +1,7 @@
 import { Button, Typography } from '@material-ui/core'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import { MouseEventHandler } from 'react'
+import { Phone } from '../../../services/phones.types'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -9,15 +10,13 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'white',
-      maxWidth: theme.spacing(35),
       borderRadius: theme.spacing(1),
     },
     cardImage: {
       height: theme.spacing(35),
     },
     cardButton: {
-      marginBottom: theme.spacing(2),
+      margin: theme.spacing(2),
     },
   })
 )
@@ -25,17 +24,18 @@ const useStyles = makeStyles((theme: Theme) =>
 type PhoneListCardProps = {
   className?: string
   onClick?: MouseEventHandler
-  name: string
-  imageUrl: string
+  phone: Phone
 }
 
-const PhoneListCard = (props: PhoneListCardProps) => {
+const PhoneListCard = ({ className, onClick, phone }: PhoneListCardProps) => {
   const classes = useStyles()
+
+  const { name, imageUrl } = phone
 
   return (
     <div className={classes.divCard}>
-      <Typography variant="h6">{props.name}</Typography>
-      <img className={classes.cardImage} src={props.imageUrl} alt={props.name}></img>
+      <Typography variant="h6">{name}</Typography>
+      <img className={classes.cardImage} src={imageUrl} alt={name}></img>
       <Button className={classes.cardButton} variant="contained" color="primary" size="small">
         Ver detalles
       </Button>

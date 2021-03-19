@@ -1,4 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
+import { Phone, PhoneDetail } from './phones.types'
 
 class PhoneService {
   private api: AxiosInstance
@@ -9,7 +10,8 @@ class PhoneService {
     })
   }
 
-  getPhones = () => this.api.get('/all')
+  getPhones = () => this.api.get<Phone[]>('/all')
+  getPhoneById = (phoneId: number) => this.api.get<PhoneDetail>(`/${phoneId}`)
 }
 
 export default PhoneService
