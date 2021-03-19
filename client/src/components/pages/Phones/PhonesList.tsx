@@ -12,11 +12,13 @@ const PhonesList = () => {
 
   const phoneService = useMemo(() => new PhoneService(), [])
 
-  const fetchPhones = useCallback(() => {
-    phoneService
-      .getPhones()
-      .then((response) => setPhones(response.data))
-      .catch((err) => console.error(err))
+  const fetchPhones = useCallback(async () => {
+    try {
+      const response = await phoneService.getPhones()
+      setPhones(response.data)
+    } catch (error) {
+      console.error(error)
+    }
   }, [phoneService])
 
   useEffect(() => {
@@ -25,13 +27,14 @@ const PhonesList = () => {
 
   return (
     <Grid container className={classes.container}>
-      {phones.length &&
-        phones.map((phone) => (
-          <Grid item xs={12} md={6} lg={3} key={phone.phone_id}>
-            <PhoneListCard phone={phone} />
-            <Divider />
-          </Grid>
-        ))}
+      {phones.length
+        ? phones.map((phone) => (
+            <Grid item xs={12} md={6} lg={3} key={phone.phone_id}>
+              <PhoneListCard phone={phone} />
+              <Divider />
+            </Grid>
+          ))
+        : 'Loading...'}
     </Grid>
   )
 }
