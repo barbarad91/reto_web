@@ -1,7 +1,7 @@
 import { Button, Typography } from '@material-ui/core'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import { MouseEventHandler } from 'react'
-import { Phone } from '../../../services/phones.types'
+import { Phone } from '../../../services/phones/phones.types'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

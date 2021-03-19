@@ -1,8 +1,8 @@
 import { Divider, Grid, makeStyles, Theme } from '@material-ui/core'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
-import PhoneService from '../../../services/phones.service'
-import { Phone } from '../../../services/phones.types'
+import PhoneService from '../../../services/phones/phones.service'
+import { Phone } from '../../../services/phones/phones.types'
 import PhoneListCard from './PhoneListCard'
 
 const PhonesList = () => {
