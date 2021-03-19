@@ -1,19 +1,10 @@
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
-  makeStyles,
-  Theme,
-  Typography,
-} from '@material-ui/core'
+import { makeStyles, Theme } from '@material-ui/core'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router'
 import PhoneService from '../../../services/phones/phones.service'
 import { PhoneDetail } from '../../../services/phones/phones.types'
 import LoadingScreen from '../../shared/LoadingScreen'
+import PhoneDetailsCard from './PhoneDetailsCard'
 
 const PhoneDetails = () => {
   const { id } = useParams<PhoneDetailsParams>()
@@ -39,33 +30,9 @@ const PhoneDetails = () => {
   return (
     <>
       {phone ? (
-        <Card className={classes.root}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              className={classes.media}
-              image="https://res.cloudinary.com/dcprb2mtk/image/upload/v1616079512/web-test/Galaxy_S7_zjixw2.jpg"
-              title="Contemplative Reptile"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all
-                continents except Antarctica
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary">
-              Share
-            </Button>
-            <Button size="small" color="primary">
-              Learn More
-            </Button>
-          </CardActions>
-        </Card>
+        <div className={classes.root}>
+          <PhoneDetailsCard className={classes.card} phone={phone} />
+        </div>
       ) : (
         <LoadingScreen />
       )}
@@ -74,10 +41,12 @@ const PhoneDetails = () => {
 }
 
 const useStyles = makeStyles(({ spacing }: Theme) => ({
-  root: { width: spacing(80) },
-  media: {
-    height: spacing(30),
-    objectFit: 'contain',
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  card: {
+    marginTop: spacing(4),
   },
 }))
 
