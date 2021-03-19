@@ -8,8 +8,7 @@ import PhoneListCard from './PhoneListCard'
 const PhonesList = () => {
   const classes = useStyles()
 
-  const initialPhones: Phone[] = []
-  const [phones, setPhones] = useState(initialPhones)
+  const [phones, setPhones] = useState<Phone[]>([])
 
   const phoneService = useMemo(() => new PhoneService(), [])
 

@@ -11,7 +11,7 @@ class PhoneService {
   }
 
   getPhones = () => this.api.get<Phone[]>('/all')
-  getPhoneById = (phoneId: number) => this.api.get<PhoneDetail>(`/${phoneId}`)
+  getPhoneById = (phoneId: string) => this.api.get<PhoneDetail>(`/${phoneId}`)
 }
 
 export default PhoneService

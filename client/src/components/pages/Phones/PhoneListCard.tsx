@@ -1,6 +1,6 @@
 import { Button, Typography } from '@material-ui/core'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
-import { MouseEventHandler } from 'react'
+import { Link } from 'react-router-dom'
 import { Phone } from '../../../services/phones/phones.types'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -22,21 +22,26 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 type PhoneListCardProps = {
-  className?: string
-  onClick?: MouseEventHandler
   phone: Phone
 }
 
-const PhoneListCard = ({ className, onClick, phone }: PhoneListCardProps) => {
+const PhoneListCard = ({ phone }: PhoneListCardProps) => {
   const classes = useStyles()
 
-  const { name, imageUrl } = phone
+  const { name, imageUrl, phone_id } = phone
 
   return (
     <div className={classes.divCard}>
       <Typography variant="h6">{name}</Typography>
       <img className={classes.cardImage} src={imageUrl} alt={name}></img>
-      <Button className={classes.cardButton} variant="contained" color="primary" size="small">
+      <Button
+        className={classes.cardButton}
+        variant="contained"
+        color="primary"
+        size="small"
+        component={Link}
+        to={`/details/${phone_id}`}
+      >
         Ver detalles
       </Button>
     </div>
