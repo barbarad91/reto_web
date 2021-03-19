@@ -10,12 +10,16 @@ type PhoneDetailsCardProps = {
 }
 
 const PhoneDetailsCard = ({ className, phone }: PhoneDetailsCardProps) => {
-  const classes = useStyles()
   const { name, imageUrl, manufacturer, description, color, price, screen, processor, ram } = phone
+  const classes = useStyles({ color })
+
   return (
     <Card className={clsx(className, classes.root)}>
       <CardMedia component="img" className={classes.media} image={imageUrl} alt={name} />
       <CardContent>
+        <Typography paragraph align="center" variant="body2" component="p" className={classes.colorContainer}>
+          <strong className={classes.colorText}>{color}</strong> <div className={classes.color} />
+        </Typography>
         <Typography gutterBottom variant="h5" component="h2">
           {name}
         </Typography>
@@ -68,13 +72,34 @@ const PhoneDetailsCard = ({ className, phone }: PhoneDetailsCardProps) => {
   )
 }
 
-const useStyles = makeStyles(({ spacing, palette }: Theme) => ({
+type ColorProp = {
+  color: string
+}
+
+const useStyles = makeStyles<Theme, ColorProp>(({ spacing, palette }: Theme) => ({
   root: {
     maxWidth: spacing(80),
   },
   media: {
     height: spacing(30),
     objectFit: 'contain',
+  },
+  colorContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  colorText: {
+    textTransform: 'capitalize',
+    marginRight: spacing(0.5),
+  },
+  color: {
+    height: spacing(2),
+    width: spacing(2),
+    backgroundColor: ({ color }) => color,
+    borderRadius: '50%',
+    border: '1px solid black',
+    display: 'inline-block',
   },
   h3: {
     fontWeight: 'normal',
@@ -85,7 +110,6 @@ const useStyles = makeStyles(({ spacing, palette }: Theme) => ({
     alignItems: 'center',
     marginTop: spacing(2),
   },
-
   icon: {
     width: spacing(3),
     color: palette.text.secondary,
