@@ -1,3 +1,4 @@
+import { Grid } from '@material-ui/core'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import PhoneService from '../../../services/phones.service'
@@ -21,8 +22,12 @@ const PhonesList = () => {
 
   return (
     <main>
-      {phones.length && phones.map((phone: { name: String; manufacturer: String; imageUrl: String }) => phone.name)}
-      <PhoneListCard />
+      {phones.length &&
+        phones.map((phone: { name: string; manufacturer: string; imageUrl: string; phone_id: number }) => (
+          <Grid item>
+            <PhoneListCard key={phone.phone_id} name={phone.name} imageUrl={phone.imageUrl} />
+          </Grid>
+        ))}
     </main>
   )
 }

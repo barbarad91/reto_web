@@ -1,55 +1,45 @@
-import React from 'react'
+import { Button, Typography } from '@material-ui/core'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
-import CardMedia from '@material-ui/core/CardMedia'
-import CardActions from '@material-ui/core/CardActions'
-import IconButton from '@material-ui/core/IconButton'
-import MoreVertIcon from '@material-ui/icons/MoreVert'
+import { MouseEventHandler } from 'react'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      maxWidth: 345,
+    divCard: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'white',
+      maxWidth: theme.spacing(35),
+      borderRadius: theme.spacing(1),
     },
-    media: {
-      height: 0,
-      paddingTop: '56.25%', // 16:9
+    cardImage: {
+      height: theme.spacing(35),
     },
-    expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: 'rotate(180deg)',
+    cardButton: {
+      marginBottom: theme.spacing(2),
     },
   })
 )
 
-const PhoneListCard = () => {
+type PhoneListCardProps = {
+  className?: string
+  onClick?: MouseEventHandler
+  name: string
+  imageUrl: string
+}
+
+const PhoneListCard = (props: PhoneListCardProps) => {
   const classes = useStyles()
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="iPhone 7"
-        subheader="Apple"
-      />
-      <CardMedia className={classes.media} image="/static/images/cards/paella.jpg" title="Paella dish" />
-      <CardActions disableSpacing>
-        {/* <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton> */}
-      </CardActions>
-    </Card>
+    <div className={classes.divCard}>
+      <Typography variant="h6">{props.name}</Typography>
+      <img className={classes.cardImage} src={props.imageUrl} alt={props.name}></img>
+      <Button className={classes.cardButton} variant="contained" color="primary" size="small">
+        Ver detalles
+      </Button>
+    </div>
   )
 }
 
