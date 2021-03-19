@@ -1,7 +1,7 @@
 // DB connection
 const mongoose = require('mongoose')
 const dbName = 'phonecave'
-mongoose.connect(`mongodb://localhost/${dbName}`, {
+mongoose.connect(`mongodb+srv://barbara:reto-web-pwd@cluster0.bzzsl.mongodb.net/${dbName}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
