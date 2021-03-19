@@ -29,7 +29,7 @@ const PhoneDetailsCard = ({ className, phone }: PhoneDetailsCardProps) => {
         <Typography variant="h6" component="h3" className={classes.h3}>
           Specs
         </Typography>
-        <Grid container>
+        <Grid container className={classes.gridContainer}>
           <Grid item lg={6} className={classes.gridItem}>
             <Icon path={mdiFactory} className={classes.icon} />
             <Typography variant="body2" component="h4">
@@ -67,6 +67,9 @@ const PhoneDetailsCard = ({ className, phone }: PhoneDetailsCardProps) => {
             </Typography>
           </Grid>
         </Grid>
+        <Typography align="center" variant="h4" component="p">
+          {price} €
+        </Typography>
       </CardContent>
     </Card>
   )
@@ -103,6 +106,9 @@ const useStyles = makeStyles<Theme, ColorProp>(({ spacing, palette }: Theme) => 
   },
   h3: {
     fontWeight: 'normal',
+  },
+  gridContainer: {
+    marginBottom: spacing(3),
   },
   gridItem: {
     display: 'flex',
