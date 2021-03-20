@@ -67,10 +67,9 @@ You can access the web application directly [here](https://reto-web.vercel.app)
 
 ### Server
 
-| Verb | Endpoint                | Result                                                                 |
-| ---- | ----------------------- | ---------------------------------------------------------------------- |
-| GET  | "/api/phones/all"       | All phones data from DB (id, name, manufacturer and image projections) |
-| GET  | "/api/phones/:phone_id" | Selected phone full DB information                                     |
+| Verb | Endpoint | Result                                                                             |
+| ---- | -------- | ---------------------------------------------------------------------------------- |
+| POST | "/"      | Fetch phones list and Phone details from two graphQL queries (allPhones and phone) |
 
 ## Author
 
