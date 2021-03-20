@@ -3,7 +3,8 @@
 - [Welcome to The Phone Cave](#general-info)
 - [Technologies](#techonologies)
 - [Install](#install-instructions)
-- [Usage](#usage-instructions)
+- [Endpoints Table](#endpoints)
+- [Author](#author)
 
 ## Welcome to The Phone Cave
 
