@@ -14,6 +14,8 @@
 This project is a challenge from Ironhack Web Development Bootcamp. Original repository can be found [here](https://github.com/VictorRodriguezIronhack/reto_web).
 It displays available mobile phones and has a detailed view page for each one of them.
 
+<img src="client/public/preview.jpg" width="400">
+
 ## Technologies
 
 The data is located in a Mongo DB. It is served through an API REST built using Express.js and Node.js.
