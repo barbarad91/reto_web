@@ -42,6 +42,7 @@ const PhoneDetails = () => {
 
 const useStyles = makeStyles(({ spacing }: Theme) => ({
   root: {
+    marginTop: spacing(8),
     display: 'flex',
     justifyContent: 'center',
   },

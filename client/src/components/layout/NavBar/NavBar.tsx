@@ -9,7 +9,7 @@ const NavBar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="sticky">
+      <AppBar position="fixed">
         <Toolbar>
           <Typography component={Link} to="/" variant="h6" className={classes.title}>
             The Phone Cave

@@ -43,6 +43,7 @@ const PhonesList = () => {
 
 const useStyles = makeStyles(({ spacing }: Theme) => ({
   container: {
+    marginTop: spacing(8),
     paddingTop: spacing(4),
     display: 'flex',
     justifyContent: 'center',
