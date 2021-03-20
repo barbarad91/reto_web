@@ -1,4 +1,4 @@
-import { Divider, Grid, makeStyles, Theme } from '@material-ui/core'
+import { Grid, makeStyles, Theme } from '@material-ui/core'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import PhoneService from '../../../services/phones/phones.service'
