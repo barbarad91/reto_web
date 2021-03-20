@@ -20,7 +20,7 @@ const NavBar = () => {
   )
 }
 
-const useStyles = makeStyles(({ spacing }: Theme) =>
+const useStyles = makeStyles<Theme>(({ spacing }: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,

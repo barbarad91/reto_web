@@ -27,12 +27,11 @@ const PhonesList = () => {
   }, [fetchPhones])
 
   return (
-    <Grid container className={classes.container}>
+    <Grid container className={classes.container} spacing={2}>
       {phones.length ? (
         phones.map((phone) => (
-          <Grid item xs={12} sm={6} lg={3} key={phone.phone_id}>
+          <Grid item xs={12} sm={6} lg={3} key={phone.phone_id} className={classes.gridItem}>
             <PhoneListCard phone={phone} />
-            <Divider />
           </Grid>
         ))
       ) : (
@@ -45,6 +44,10 @@ const PhonesList = () => {
 const useStyles = makeStyles(({ spacing }: Theme) => ({
   container: {
     paddingTop: spacing(4),
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  gridItem: {
     display: 'flex',
     justifyContent: 'center',
   },
