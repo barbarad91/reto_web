@@ -1,6 +1,6 @@
 import { Switch, Route } from 'react-router-dom'
-import PhoneDetails from '../pages/Phones/PhoneDetails'
-import PhonesList from '../pages/Phones/PhonesList'
+import PhoneDetails from '../pages/PhoneDetails/PhoneDetails'
+import PhonesList from '../pages/PhonesList/PhonesList'
 const Routes = () => {
   return (
     <Switch>

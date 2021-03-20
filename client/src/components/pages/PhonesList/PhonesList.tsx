@@ -1,34 +1,19 @@
+import { useQuery } from '@apollo/client'
 import { Grid, makeStyles, Theme } from '@material-ui/core'
-import { useCallback, useEffect, useMemo, useState } from 'react'
 
-import PhoneService from '../../../services/phones/phones.service'
-import { Phone } from '../../../services/phones/phones.types'
 import LoadingScreen from '../../shared/LoadingScreen'
 import PhoneListCard from './PhoneListCard'
+import { PhonesListData, GET_PHONES_LIST } from './PhonesList.graphql'
 
 const PhonesList = () => {
   const classes = useStyles()
 
-  const [phones, setPhones] = useState<Phone[]>([])
+  const { data } = useQuery<PhonesListData>(GET_PHONES_LIST)
 
-  const phoneService = useMemo(() => new PhoneService(), [])
-
-  const fetchPhones = useCallback(async () => {
-    try {
-      const response = await phoneService.getPhones()
-      setPhones(response.data)
-    } catch (error) {
-      console.error(error)
-    }
-  }, [phoneService])
-
-  useEffect(() => {
-    fetchPhones()
-  }, [fetchPhones])
-
+  const phones = data?.allPhones
   return (
     <Grid container className={classes.container} spacing={2}>
-      {phones.length ? (
+      {phones?.length ? (
         phones.map((phone) => (
           <Grid item xs={12} sm={6} lg={3} key={phone.phone_id} className={classes.gridItem}>
             <PhoneListCard phone={phone} />

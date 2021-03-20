@@ -1,0 +1,20 @@
+type Query {
+  allPhones: [Phone!]!
+  phone(phone_id: Int!): Phone
+}
+
+type Phone {
+  id: ID!
+  phone_id: Int!
+  name: String!
+  manufacturer: String!
+  description: String!
+  color: String
+  price: Int!
+  imageUrl: String
+  screen: String
+  processor: String
+  ram: Int
+  createdAt: String!
+  updatedAt: String!
+}

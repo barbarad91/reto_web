@@ -1,7 +1,7 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
-import { Phone } from '../../../services/phones/phones.types'
 import { Link } from 'react-router-dom'
+import { Phone } from './PhonesList.graphql'
 
 type PhoneListCardProps = {
   phone: Phone

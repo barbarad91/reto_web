@@ -1,8 +1,8 @@
 import { Card, CardMedia, CardContent, Typography, makeStyles, Theme, Grid } from '@material-ui/core'
 import clsx from 'clsx'
-import { PhoneDetail } from '../../../services/phones/phones.types'
 import Icon from '@mdi/react'
 import { mdiFactory, mdiCellphoneScreenshot, mdiMemory, mdiChip } from '@mdi/js'
+import { PhoneDetail } from './PhoneDetails.graphql'
 
 type PhoneDetailsCardProps = {
   className?: string
