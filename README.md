@@ -1,7 +1,9 @@
 # Table of contents
 
-_[Welcome to The Phone Cave](#general-info)
-_[Technologies](#techonologies)
+- [Welcome to The Phone Cave](#general-info)
+- [Technologies](#techonologies)
+- [Install](#install-instructions)
+- [Usage](#usage-instructions)
 
 ## Welcome to The Phone Cave
 
