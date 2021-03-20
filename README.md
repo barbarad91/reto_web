@@ -18,7 +18,7 @@ It displays available mobile phones and has a detailed view page for each one of
 
 ## Technologies
 
-The data is located in a Mongo DB. It is served through an API REST built using Express.js and Node.js.
+The data is located in a Mongo DB. It is served through a graphQL API and Node.js.
 The client side is built with React and Typescript, using Material-UI.
 
 Server side has been deployed to Heroku and client side has been deployed to Vercel.
