@@ -48,4 +48,4 @@ npm start
 
 ### Web
 
-You can access the web application directly here: <reto-web.vercel.app>
+You can access the web application directly here: <https://reto-web.vercel.app>
